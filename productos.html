@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Productos – Legumechanics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="lm-body-dark">
+  <header class="lm-header">
+    <div class="lm-container lm-header-inner">
+      <a href="index.html" class="lm-logo">
+        <img src="img/logo-legumechanics.png" alt="Legumechanics" />
+      </a>
+      <nav class="lm-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="productos.html" class="is-active">Productos</a>
+        <a href="index.html#ciencia">Ciencia</a>
+        <a href="index.html#suscripcion">Suscripción</a>
+      </nav>
+      <div class="lm-nav-cta">
+        <button class="lm-btn lm-btn-outline" onclick="alert('Zona de cliente próximamente')">Iniciar sesión</button>
+        <a href="#" class="lm-btn lm-btn-green" onclick="LM.openMiniCart(); return false;">
+          Carrito (<span id="lm-cart-count">0</span>)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="lm-section lm-section-dark-top">
+      <div class="lm-container">
+        <p class="lm-kicker">Productos</p>
+        <h1 class="lm-section-title">La gama Legumechanics</h1>
+        <p class="lm-section-sub lm-section-sub-muted">
+          Tres productos, una misión: llevar tu rendimiento al siguiente nivel con la potencia de las legumbres.
+        </p>
+
+        <div class="lm-products-grid" id="lm-products-grid">
+          <!-- Las tarjetas se generan también desde JS usando la misma definición que el carrito -->
+        </div>
+
+        <p class="lm-section-sub lm-section-sub-muted lm-p-small">
+          Los precios y cantidades son de ejemplo. Cuando quieras activar pagos reales podremos conectar esta
+          página a Stripe o a la pasarela que elijas.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- MINI CARRITO -->
+  <aside class="lm-mini-cart" id="lm-mini-cart">
+    <div class="lm-mini-cart-inner">
+      <header class="lm-mini-cart-header">
+        <h2>Tu carrito</h2>
+        <button class="lm-mini-cart-close" onclick="LM.closeMiniCart()">✕</button>
+      </header>
+      <div id="lm-mini-cart-items" class="lm-mini-cart-items"></div>
+      <footer class="lm-mini-cart-footer">
+        <div class="lm-mini-cart-total">
+          <span>Total</span>
+          <strong id="lm-mini-cart-total">0,00 €</strong>
+        </div>
+        <a href="checkout.html" class="lm-btn lm-btn-orange lm-mini-cart-checkout">Ir al checkout</a>
+      </footer>
+    </div>
+  </aside>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

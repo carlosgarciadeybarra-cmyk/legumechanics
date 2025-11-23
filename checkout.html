@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkout – Legumechanics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="lm-body-dark">
+  <header class="lm-header">
+    <div class="lm-container lm-header-inner">
+      <a href="index.html" class="lm-logo">
+        <img src="img/logo-legumechanics.png" alt="Legumechanics" />
+      </a>
+      <nav class="lm-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="productos.html">Productos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="lm-section lm-section-dark-top">
+      <div class="lm-container lm-checkout-grid">
+        <div>
+          <p class="lm-kicker">Paso final</p>
+          <h1 class="lm-section-title">Checkout (demo)</h1>
+          <p class="lm-section-sub lm-section-sub-muted">
+            Este checkout es una simulación para que puedas ver el flujo completo de compra sin necesidad de
+            configurar todavía una pasarela de pagos real.
+          </p>
+
+          <form class="lm-form">
+            <div class="lm-form-group">
+              <label>Nombre completo</label>
+              <input type="text" placeholder="Tu nombre" required />
+            </div>
+            <div class="lm-form-group">
+              <label>Email</label>
+              <input type="email" placeholder="tucorreo@ejemplo.com" required />
+            </div>
+            <div class="lm-form-group">
+              <label>Dirección de envío</label>
+              <input type="text" placeholder="Calle, número, piso…" required />
+            </div>
+            <div class="lm-form-grid">
+              <div class="lm-form-group">
+                <label>Código postal</label>
+                <input type="text" required />
+              </div>
+              <div class="lm-form-group">
+                <label>Ciudad</label>
+                <input type="text" required />
+              </div>
+            </div>
+
+            <h2 class="lm-form-title">Método de pago (demo)</h2>
+            <div class="lm-payment-options">
+              <button type="button" class="lm-pay-btn lm-pay-apple"> Pay</button>
+              <button type="button" class="lm-pay-btn lm-pay-google">G Pay</button>
+              <button type="button" class="lm-pay-btn lm-pay-card">
+                ▢ Pago con tarjeta
+              </button>
+            </div>
+
+            <p class="lm-section-sub lm-section-sub-muted lm-p-small">
+              En la versión final conectaremos estos botones con Stripe (Apple Pay, Google Pay y tarjeta).
+            </p>
+
+            <button type="submit" class="lm-btn lm-btn-orange lm-checkout-submit">
+              Confirmar pedido (demo)
+            </button>
+          </form>
+        </div>
+
+        <aside class="lm-checkout-summary">
+          <h2>Resumen del pedido</h2>
+          <div id="lm-checkout-items" class="lm-checkout-items"></div>
+          <div class="lm-checkout-total">
+            <span>Total</span>
+            <strong id="lm-checkout-total">0,00 €</strong>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
