@@ -13,8 +13,6 @@
   --radius-md: 12px;
   --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.55);
   --transition-fast: 0.18s ease;
-  /* Approx. sticky header height (logo + padding). Used to fit the hero section on common laptop viewports. */
-  --lm-header-h: 64px;
 }
 
 *,
@@ -856,7 +854,7 @@ body {
 .lm-hero-video-el {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -970,92 +968,10 @@ body {
   color: var(--accent-green);
 }
 
-/* === HERO: fit on common 15.6" laptop viewports (desktop) ===
-   Goal: both columns aligned, no vertical scroll on typical 1366x768 and 1920x1080. */
-@media (min-width: 900px) {
-  /* Reduce outer padding so the hero can fit under the sticky header */
-  .lm-hero {
-    padding: 12px 0 14px;
-  }
 
-  /* Make the split take the available viewport height (minus header + breathing room)
-     Use a fixed height (not only min-height) so both columns always match. */
-  .lm-hero-split {
-    height: calc(100vh - var(--lm-header-h) - 26px);
-    min-height: 620px;
-    align-items: stretch;
-    gap: 18px;
-  }
-
-  /* Keep video and copy perfectly aligned in height */
-  .lm-hero-video {
-    min-height: auto;
-    height: 100%;
-  }
-
-  .lm-hero-copy {
-    height: 100%;
-    justify-content: flex-start;
-    padding: 10px 0 0;
-    overflow: hidden;
-  }
-
-  /* Typographic balance: make LEGUMECHANICS the dominant line */
-  .lm-hero-title {
-    font-size: clamp(50px, 4.6vw, 88px);
-    line-height: 0.92;
-    margin-bottom: 16px;
-  }
-
-  .lm-hero-title.lm-hero-title-3 .lm-hero-line.lm-green {
-    font-size: 1.35em;
-    letter-spacing: 0.02em;
-  }
-
-  /* Tighten copy slightly so the full composition fits without scroll */
-  .lm-hero-sub {
-    font-size: 14.5px;
-    margin-bottom: 14px;
-  }
-
-  .lm-hero-actions {
-    margin-bottom: 12px;
-  }
-
-  .lm-hero-card-wrap {
-    margin-top: auto;
-  }
-}
-
-/* Extra-tight mode for short laptop heights (e.g., 768px) */
-@media (min-width: 900px) and (max-height: 800px) {
-  .lm-hero {
-    padding: 10px 0 12px;
-  }
-
-  .lm-hero-copy {
-    padding-top: 6px;
-  }
-
-  .lm-hero-title {
-    font-size: clamp(46px, 4.4vw, 80px);
-    margin-bottom: 10px;
-  }
-
-  .lm-hero-sub {
-    font-size: 14px;
-    margin-bottom: 12px;
-  }
-
-  .lm-hero-card {
-    padding: 14px;
-  }
-
-  .lm-hero-card-title {
-    font-size: 17px;
-  }
-
-  .lm-hero-card-text {
-    font-size: 12.5px;
-  }
+/* Safe video resize: keep proportion, no cropping */
+.lm-hero video{
+  width:100%;
+  max-height:60vh;
+  object-fit:contain;
 }
