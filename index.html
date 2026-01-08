@@ -28,12 +28,20 @@
   <main>
     <!-- HERO -->
     <section class="lm-hero" id="inicio">
-      <div class="lm-container lm-hero-grid">
-        <div>
+      <div class="lm-container lm-hero-split">
+        <div class="lm-hero-video" aria-hidden="true">
+          <video class="lm-hero-video-el" autoplay muted loop playsinline preload="metadata">
+            <source src="media/hero.mp4" type="video/mp4" />
+          </video>
+          <div class="lm-hero-video-overlay"></div>
+        </div>
+
+        <div class="lm-hero-copy">
           <p class="lm-kicker">Nutrición deportiva plant‑based</p>
-          <h1 class="lm-hero-title">
-            Potencia tu rendimiento<br />
-            con la fuerza de las <span>legumbres</span>.
+          <h1 class="lm-hero-title lm-hero-title-3">
+            <span class="lm-hero-line">RENDIMIENTO<span class="lm-dot">.</span></span>
+            <span class="lm-hero-line">SOSTENIBILIDAD<span class="lm-dot">.</span></span>
+            <span class="lm-hero-line">LEGUMECHANICS<span class="lm-dot">.</span></span>
           </h1>
           <p class="lm-hero-sub">
             Fórmulas de preentreno y recuperación diseñadas para deportistas que quieren ir más fuerte,
@@ -43,23 +51,9 @@
             <a href="productos.html" class="lm-btn lm-btn-orange">Explorar productos</a>
             <a href="#ciencia" class="lm-btn lm-btn-outline">Ver la ciencia detrás</a>
           </div>
-          <div class="lm-hero-meta">
-            <div>
-              <strong>+20 g proteína vegetal</strong>
-              por servicio en nuestra Pea Protein.
-            </div>
-            <div>
-              <strong>Ciencia + ingeniería</strong>
-              fórmulas basadas en legumbres y evidencia científica.
-            </div>
-          </div>
-        </div>
 
-        <div class="lm-hero-right">
-          <div class="lm-hero-pack-wrap">
-            <img src="img/pack-family.png" alt="Pack Legumechanics" class="lm-hero-pack" />
-          </div>
-          <aside class="lm-hero-card">
+          <div class="lm-hero-card-wrap">
+            <aside class="lm-hero-card">
           <p class="lm-hero-card-tag">Pack Legumechanics</p>
           <h2 class="lm-hero-card-title">Preentreno + Recuperación</h2>
           <p class="lm-hero-card-text">
@@ -82,6 +76,7 @@
             </button>
           </div>
         </aside>
+          </div>
         </div>
       </div>
     </section>

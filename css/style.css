@@ -198,6 +198,68 @@ body {
   color: var(--accent-green);
 }
 
+
+.lm-hero-title-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lm-hero-line {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.lm-dot {
+  color: var(--accent-green);
+}
+
+/* Desktop boost: make hero copy as tall as the video */
+@media (min-width: 901px) {
+  .lm-hero-split {
+    min-height: 78vh;
+  }
+
+  .lm-hero-video {
+    min-height: 78vh;
+  }
+
+  .lm-hero-copy {
+    height: 100%;
+    padding: 28px 0;
+  }
+
+  .lm-kicker {
+    font-size: 13px;
+    letter-spacing: 0.18em;
+  }
+
+  .lm-hero-title {
+    font-size: clamp(44px, 4.2vw, 72px);
+    line-height: 0.98;
+    margin-bottom: 14px;
+  }
+
+  .lm-hero-sub {
+    font-size: 16px;
+    max-width: 520px;
+    margin-bottom: 22px;
+  }
+
+  .lm-hero-card-wrap {
+    margin-top: 18px;
+  }
+
+  .lm-hero-card {
+    padding: 18px;
+  }
+
+  .lm-hero-card h3 {
+    font-size: 18px;
+  }
+}
+
 .lm-hero-sub {
   font-size: 14px;
   color: var(--text-muted);
@@ -764,5 +826,82 @@ body {
   .lm-products-grid,
   .lm-benefits-grid {
     gap: 14px;
+  }
+}
+
+
+/* HERO VIDEO SPLIT (mobile overlay, desktop side-by-side) */
+.lm-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.lm-hero-split {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.lm-hero-video {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #000;
+  min-height: 560px;
+}
+
+.lm-hero-video-el {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lm-hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.8) 100%);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.lm-hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lm-hero-card-wrap {
+  margin-top: 16px;
+}
+
+/* Mobile: video as background, ONLY text/buttons overlay */
+@media (max-width: 900px) {
+  .lm-hero-split {
+    grid-template-columns: 1fr;
+  }
+
+  .lm-hero-video {
+    position: absolute;
+    inset: 0;
+    border-radius: 0;
+    min-height: 88vh;
+  }
+
+  .lm-hero-video-overlay {
+    opacity: 1;
+  }
+
+  .lm-hero-copy {
+    position: relative;
+    z-index: 2;
+    min-height: 88vh;
+    padding: 92px 0 26px;
+    justify-content: flex-end;
+  }
+
+  .lm-hero-card-wrap {
+    display: none;
   }
 }
