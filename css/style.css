@@ -946,3 +946,14 @@ body {
     font-size: clamp(38px, 9vw, 56px);
   }
 }
+
+
+/* === HERO MATH COMPOSITION === */
+.lm-math {
+  color: #ffffff;
+  margin-left: 0.15em;
+}
+
+.lm-green {
+  color: var(--accent-green);
+}
