@@ -975,13 +975,16 @@ body {
 @media (min-width: 900px) {
   /* Reduce outer padding so the hero can fit under the sticky header */
   .lm-hero {
-    padding: 18px 0 22px;
+    padding: 12px 0 14px;
   }
 
-  /* Make the split take the available viewport height (minus header + breathing room) */
+  /* Make the split take the available viewport height (minus header + breathing room)
+     Use a fixed height (not only min-height) so both columns always match. */
   .lm-hero-split {
-    min-height: calc(100vh - var(--lm-header-h) - 32px);
+    height: calc(100vh - var(--lm-header-h) - 26px);
+    min-height: 620px;
     align-items: stretch;
+    gap: 18px;
   }
 
   /* Keep video and copy perfectly aligned in height */
@@ -992,54 +995,67 @@ body {
 
   .lm-hero-copy {
     height: 100%;
-    justify-content: center;
-    padding: 0;
+    justify-content: flex-start;
+    padding: 10px 0 0;
+    overflow: hidden;
   }
 
   /* Typographic balance: make LEGUMECHANICS the dominant line */
   .lm-hero-title {
-    font-size: clamp(52px, 4.8vw, 92px);
+    font-size: clamp(50px, 4.6vw, 88px);
     line-height: 0.92;
     margin-bottom: 16px;
   }
 
   .lm-hero-title.lm-hero-title-3 .lm-hero-line.lm-green {
-    font-size: 1.18em;
+    font-size: 1.35em;
     letter-spacing: 0.02em;
   }
 
   /* Tighten copy slightly so the full composition fits without scroll */
   .lm-hero-sub {
-    font-size: 15px;
-    margin-bottom: 16px;
-  }
-
-  .lm-hero-actions {
+    font-size: 14.5px;
     margin-bottom: 14px;
   }
 
+  .lm-hero-actions {
+    margin-bottom: 12px;
+  }
+
   .lm-hero-card-wrap {
-    margin-top: 12px;
+    margin-top: auto;
   }
 }
 
 /* Extra-tight mode for short laptop heights (e.g., 768px) */
 @media (min-width: 900px) and (max-height: 800px) {
   .lm-hero {
-    padding: 14px 0 18px;
+    padding: 10px 0 12px;
+  }
+
+  .lm-hero-copy {
+    padding-top: 6px;
   }
 
   .lm-hero-title {
-    font-size: clamp(48px, 4.6vw, 84px);
-    margin-bottom: 12px;
+    font-size: clamp(46px, 4.4vw, 80px);
+    margin-bottom: 10px;
   }
 
   .lm-hero-sub {
     font-size: 14px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
   .lm-hero-card {
-    padding: 16px;
+    padding: 14px;
+  }
+
+  .lm-hero-card-title {
+    font-size: 17px;
+  }
+
+  .lm-hero-card-text {
+    font-size: 12.5px;
   }
 }
