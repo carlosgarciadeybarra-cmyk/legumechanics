@@ -13,6 +13,8 @@
   --radius-md: 12px;
   --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.55);
   --transition-fast: 0.18s ease;
+  /* Approx. sticky header height (logo + padding). Used to fit the hero section on common laptop viewports. */
+  --lm-header-h: 64px;
 }
 
 *,
@@ -966,4 +968,78 @@ body {
 
 .lm-hero-title.lm-hero-title-3 .lm-hero-line.lm-green {
   color: var(--accent-green);
+}
+
+/* === HERO: fit on common 15.6" laptop viewports (desktop) ===
+   Goal: both columns aligned, no vertical scroll on typical 1366x768 and 1920x1080. */
+@media (min-width: 900px) {
+  /* Reduce outer padding so the hero can fit under the sticky header */
+  .lm-hero {
+    padding: 18px 0 22px;
+  }
+
+  /* Make the split take the available viewport height (minus header + breathing room) */
+  .lm-hero-split {
+    min-height: calc(100vh - var(--lm-header-h) - 32px);
+    align-items: stretch;
+  }
+
+  /* Keep video and copy perfectly aligned in height */
+  .lm-hero-video {
+    min-height: auto;
+    height: 100%;
+  }
+
+  .lm-hero-copy {
+    height: 100%;
+    justify-content: center;
+    padding: 0;
+  }
+
+  /* Typographic balance: make LEGUMECHANICS the dominant line */
+  .lm-hero-title {
+    font-size: clamp(52px, 4.8vw, 92px);
+    line-height: 0.92;
+    margin-bottom: 16px;
+  }
+
+  .lm-hero-title.lm-hero-title-3 .lm-hero-line.lm-green {
+    font-size: 1.18em;
+    letter-spacing: 0.02em;
+  }
+
+  /* Tighten copy slightly so the full composition fits without scroll */
+  .lm-hero-sub {
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+
+  .lm-hero-actions {
+    margin-bottom: 14px;
+  }
+
+  .lm-hero-card-wrap {
+    margin-top: 12px;
+  }
+}
+
+/* Extra-tight mode for short laptop heights (e.g., 768px) */
+@media (min-width: 900px) and (max-height: 800px) {
+  .lm-hero {
+    padding: 14px 0 18px;
+  }
+
+  .lm-hero-title {
+    font-size: clamp(48px, 4.6vw, 84px);
+    margin-bottom: 12px;
+  }
+
+  .lm-hero-sub {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+
+  .lm-hero-card {
+    padding: 16px;
+  }
 }
