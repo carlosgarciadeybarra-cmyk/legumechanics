@@ -957,3 +957,13 @@ body {
 .lm-green {
   color: var(--accent-green);
 }
+
+
+/* === HERO MATH COLOR OVERRIDES (ensure only LEGUMECHANICS is green) === */
+.lm-hero-title.lm-hero-title-3 .lm-hero-line {
+  color: #ffffff;
+}
+
+.lm-hero-title.lm-hero-title-3 .lm-hero-line.lm-green {
+  color: var(--accent-green);
+}
