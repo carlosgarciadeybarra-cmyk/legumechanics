@@ -905,3 +905,44 @@ body {
     display: none;
   }
 }
+
+
+/* === HERO TITLES: BEBAS NEUE (IMPACT MODE) === */
+.lm-hero-title,
+.lm-hero-title-3 {
+  font-family: 'Bebas Neue', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.lm-hero-title-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+}
+
+.lm-hero-line {
+  line-height: 0.95;
+}
+
+/* Desktop dominance */
+@media (min-width: 900px) {
+  .lm-hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .lm-hero-title {
+    font-size: clamp(56px, 5vw, 96px);
+    margin-bottom: 24px;
+  }
+}
+
+/* Mobile balance */
+@media (max-width: 899px) {
+  .lm-hero-title {
+    font-size: clamp(38px, 9vw, 56px);
+  }
+}
