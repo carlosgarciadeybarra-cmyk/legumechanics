@@ -11,7 +11,7 @@ const LM = (() => {
       name: "Pea Protein Power",
       tag: "Preentreno",
       subtitle: "20 g de proteína · 0% lactosa",
-      price: 24.9,
+      price: 17.99,
       badge: "Ideal antes o después de entrenar",
       details:
         "Proteína de guisante de alta calidad con perfil aminoacídico optimizado para deportistas. Energía limpia y saciante.",
@@ -31,9 +31,9 @@ const LM = (() => {
       metaLeft: "Unidad · Packs disponibles",
       metaRight: "Sin aceite de palma",
     },
-    "recovery-doybag350": {
-      id: "recovery-doybag350",
-      image: "img/doybag350.png",
+    "recovery-gummies": {
+      id: "recovery-gummies",
+      image: "img/gummies.png",
       name: "Recovery Gummies",
       tag: "Recuperación",
       subtitle: "Electrolitos · Antioxidantes",
@@ -41,7 +41,7 @@ const LM = (() => {
       badge: "Perfecto post-entreno",
       details:
         "Gummies formuladas para reponer minerales y apoyar la recuperación tras entrenos intensos, con sabor ligero y textura suave.",
-      metaLeft: "60 doybag350 por bote",
+      metaLeft: "60 gummies por bote",
       metaRight: "Sin gelatina animal",
     },
     "pack-legumechanics": {
@@ -172,7 +172,7 @@ const LM = (() => {
     const grid = document.getElementById("lm-products-grid");
     if (!grid) return;
 
-    const productOrder = ["bote500","doybag350","barrita"];
+    const productOrder = ["pea-protein", "energy-bar", "recovery-gummies"];
     grid.innerHTML = "";
 
     for (const id of productOrder) {
