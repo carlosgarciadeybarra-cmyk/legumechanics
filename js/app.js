@@ -31,9 +31,9 @@ const LM = (() => {
       metaLeft: "Unidad · Packs disponibles",
       metaRight: "Sin aceite de palma",
     },
-    "recovery-gummies": {
-      id: "recovery-gummies",
-      image: "img/gummies.png",
+    "recovery-doybag350": {
+      id: "recovery-doybag350",
+      image: "img/doybag350.png",
       name: "Recovery Gummies",
       tag: "Recuperación",
       subtitle: "Electrolitos · Antioxidantes",
@@ -41,7 +41,7 @@ const LM = (() => {
       badge: "Perfecto post-entreno",
       details:
         "Gummies formuladas para reponer minerales y apoyar la recuperación tras entrenos intensos, con sabor ligero y textura suave.",
-      metaLeft: "60 gummies por bote",
+      metaLeft: "60 doybag350 por bote",
       metaRight: "Sin gelatina animal",
     },
     "pack-legumechanics": {
@@ -172,7 +172,7 @@ const LM = (() => {
     const grid = document.getElementById("lm-products-grid");
     if (!grid) return;
 
-    const productOrder = ["pea-protein", "energy-bar", "recovery-gummies"];
+    const productOrder = ["bote500","doybag350","barrita"];
     grid.innerHTML = "";
 
     for (const id of productOrder) {

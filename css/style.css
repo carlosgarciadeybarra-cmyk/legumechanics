@@ -1017,7 +1017,7 @@ section, .lm-section{
   inset:0;
   background: url("../img/pattern.png");
   background-size: 520px;
-  opacity:.12;
+  opacity:.22;
   pointer-events:none;
   border-radius: inherit;
   mix-blend-mode: overlay;
@@ -1054,3 +1054,55 @@ h1,h2,h3{
   filter: drop-shadow(0 18px 28px rgba(0,0,0,.55));
 }
 
+
+
+/* Stronger texture presence */
+body.lm-body{
+  position: relative;
+}
+body.lm-body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: url("../img/pattern.png");
+  background-size: 460px;
+  background-repeat: repeat;
+  opacity: .22;
+  pointer-events:none;
+  z-index: 0;
+  mix-blend-mode: overlay;
+}
+body.lm-body::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(1200px 900px at 20% 0%, rgba(39,92,54,.35), transparent 60%),
+              radial-gradient(900px 700px at 80% 20%, rgba(197,154,58,.14), transparent 62%),
+              radial-gradient(1200px 900px at 50% 100%, rgba(0,0,0,.55), rgba(0,0,0,.88));
+  pointer-events:none;
+  z-index: 0;
+}
+main, header, section, footer{
+  position: relative;
+  z-index: 1;
+}
+
+/* Texture panels */
+.lm-panel{
+  background: linear-gradient(180deg, rgba(12,20,13,.78), rgba(12,20,13,.45));
+  border: 1px solid rgba(243,241,234,.14);
+  box-shadow: 0 20px 60px rgba(0,0,0,.45);
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+}
+.lm-panel::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: url("../img/pattern.png");
+  background-size: 460px;
+  opacity:.18;
+  mix-blend-mode: overlay;
+  pointer-events:none;
+}
