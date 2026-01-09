@@ -967,3 +967,90 @@ body {
 .lm-hero-title.lm-hero-title-3 .lm-hero-line.lm-green {
   color: var(--accent-green);
 }
+
+
+
+/* ===========================
+   Brand refresh (texture-first)
+   Video hero untouched.
+   =========================== */
+:root{
+  --lm-forest:#0b120c;
+  --lm-forest-2:#0f1c12;
+  --lm-ink:#070807;
+  --lm-ivory:#f3f1ea;
+  --lm-muted:rgba(243,241,234,.78);
+  --lm-gold:#c59a3a;
+  --lm-card:rgba(12,20,13,.72);
+  --lm-card-2:rgba(12,20,13,.58);
+  --lm-stroke:rgba(243,241,234,.14);
+  --lm-shadow: 0 20px 60px rgba(0,0,0,.45);
+}
+
+body.lm-body{
+  color: var(--lm-ivory);
+  background:
+    radial-gradient(1200px 800px at 20% 0%, rgba(39, 92, 54, .35), transparent 55%),
+    radial-gradient(900px 700px at 80% 20%, rgba(197, 154, 58, .12), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,.92), rgba(0,0,0,.96)),
+    url("../img/pattern.png");
+  background-size: auto, auto, auto, 520px;
+  background-attachment: scroll, scroll, scroll, fixed;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+}
+
+/* Make sections feel like premium packaging */
+section, .lm-section{
+  position: relative;
+}
+
+.lm-card, .product-card, .cart, .checkout, .lm-pack{
+  background: linear-gradient(180deg, var(--lm-card), rgba(12,20,13,.45));
+  border: 1px solid var(--lm-stroke);
+  box-shadow: var(--lm-shadow);
+  backdrop-filter: blur(10px);
+}
+
+.lm-card::before, .product-card::before, .lm-pack::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: url("../img/pattern.png");
+  background-size: 520px;
+  opacity:.12;
+  pointer-events:none;
+  border-radius: inherit;
+  mix-blend-mode: overlay;
+}
+
+/* Buttons */
+button, .btn, .lm-btn, a.lm-btn{
+  border-radius: 14px;
+}
+
+.lm-btn-primary, .btn-primary{
+  background: linear-gradient(135deg, rgba(197,154,58,.95), rgba(197,154,58,.65));
+  color: #111;
+  border: 1px solid rgba(255,255,255,.25);
+  box-shadow: 0 10px 30px rgba(197,154,58,.22);
+}
+
+.lm-btn-secondary, .btn-secondary{
+  background: rgba(12,20,13,.55);
+  color: var(--lm-ivory);
+  border: 1px solid rgba(243,241,234,.18);
+}
+
+/* Headlines feel more “packaging” */
+h1,h2,h3{
+  letter-spacing: .04em;
+}
+.lm-brand{
+  text-transform: uppercase;
+}
+
+/* Product images: keep proportions, premium framing */
+.product-card img, .lm-pack img, img.product-img{
+  filter: drop-shadow(0 18px 28px rgba(0,0,0,.55));
+}
+
