@@ -15,6 +15,36 @@
   --transition-fast: 0.18s ease;
 }
 
+/* ========= TIPOGRAFÍA (Montserrat) =========
+   - Titulares / letras grandes: ExtraBold
+   - Menús: ExtraBoldItalic
+   - Textos: Regular
+   Nota: el TEXTO (copy) de los botones NO se cambia. */
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
 *,
 *::before,
 *::after {
@@ -25,7 +55,29 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
+}
+
+/* Titulares / letras grandes */
+h1,
+h2,
+h3,
+.lm-hero-title,
+.lm-hero-title-3,
+.lm-section-title,
+.lm-product-name,
+.lm-product-price {
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 800;
+}
+
+/* Menús */
+.lm-nav,
+.lm-nav a {
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 800;
+  font-style: italic;
 }
 
 body {
@@ -947,10 +999,9 @@ body {
 }
 
 
-/* === HERO TITLES: BEBAS NEUE (IMPACT MODE) === */
+/* === HERO TITLES === */
 .lm-hero-title,
 .lm-hero-title-3 {
-  font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
