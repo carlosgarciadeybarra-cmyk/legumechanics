@@ -2,90 +2,56 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Checkout – Legumechanics</title>
+  <title>Checkout — Legumechanics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="lm-body-dark">
+<body class="lm-body">
   <header class="lm-header">
     <div class="lm-container lm-header-inner">
-      <a href="index.html" class="lm-logo">
-        <img src="img/logo-legumechanics.png" alt="Legumechanics" />
+      <a href="index.html" class="lm-brand" aria-label="Legumechanics">
+        <img src="img/logo-mark-copper.png" alt="" />
+        <span>LEGUMECHANICS</span>
       </a>
-      <nav class="lm-nav">
-        <a href="index.html#inicio">Inicio</a>
-        <a href="productos.html">Productos</a>
-        <a href="go-silverback.html">Go Silverback</a>
-      </nav>
+      <nav class="lm-nav"><a href="productos.html">← Volver al producto</a></nav>
     </div>
   </header>
 
   <main>
-    <section class="lm-section lm-section-dark-top">
+    <section class="lm-checkout-page">
       <div class="lm-container lm-checkout-grid">
-        <div>
-          <p class="lm-kicker">Paso final</p>
-          <h1 class="lm-section-title">Checkout (demo)</h1>
-          <p class="lm-section-sub lm-section-sub-muted">
-            Este checkout es una simulación para que puedas ver el flujo completo de compra sin necesidad de
-            configurar todavía una pasarela de pagos real.
-          </p>
+        <div class="lm-checkout-main">
+          <p class="lm-kicker">Checkout demo</p>
+          <h1>FINALIZA TU PEDIDO.</h1>
+          <p class="lm-section-sub">El diseño está preparado para integrar Stripe, Apple Pay, Google Pay o la pasarela que elijas.</p>
 
           <form class="lm-form">
-            <div class="lm-form-group">
-              <label>Nombre completo</label>
-              <input type="text" placeholder="Tu nombre" required />
-            </div>
-            <div class="lm-form-group">
-              <label>Email</label>
-              <input type="email" placeholder="tucorreo@ejemplo.com" required />
-            </div>
-            <div class="lm-form-group">
-              <label>Dirección de envío</label>
-              <input type="text" placeholder="Calle, número, piso…" required />
-            </div>
+            <div class="lm-form-group"><label>Nombre completo</label><input type="text" placeholder="Tu nombre" required /></div>
+            <div class="lm-form-group"><label>Email</label><input type="email" placeholder="tucorreo@ejemplo.com" required /></div>
+            <div class="lm-form-group"><label>Dirección de envío</label><input type="text" placeholder="Calle, número, piso…" required /></div>
             <div class="lm-form-grid">
-              <div class="lm-form-group">
-                <label>Código postal</label>
-                <input type="text" required />
-              </div>
-              <div class="lm-form-group">
-                <label>Ciudad</label>
-                <input type="text" required />
-              </div>
+              <div class="lm-form-group"><label>Código postal</label><input type="text" required /></div>
+              <div class="lm-form-group"><label>Ciudad</label><input type="text" required /></div>
             </div>
-
-            <h2 class="lm-form-title">Método de pago (demo)</h2>
+            <h2 class="lm-form-title">Método de pago</h2>
             <div class="lm-payment-options">
-              <button type="button" class="lm-pay-btn lm-pay-apple"> Pay</button>
-              <button type="button" class="lm-pay-btn lm-pay-google">G Pay</button>
-              <button type="button" class="lm-pay-btn lm-pay-card">
-                ▢ Pago con tarjeta
-              </button>
+              <button type="button" class="lm-pay-btn"> Pay</button>
+              <button type="button" class="lm-pay-btn">G Pay</button>
+              <button type="button" class="lm-pay-btn">Pago con tarjeta</button>
             </div>
-
-            <p class="lm-section-sub lm-section-sub-muted lm-p-small">
-              En la versión final conectaremos estos botones con Stripe (Apple Pay, Google Pay y tarjeta).
-            </p>
-
-            <button type="submit" class="lm-btn lm-btn-orange lm-checkout-submit">
-              Confirmar pedido (demo)
-            </button>
+            <button type="submit" class="lm-btn lm-btn-copper lm-btn-xl lm-checkout-submit">Confirmar pedido (demo)</button>
           </form>
         </div>
 
         <aside class="lm-checkout-summary">
-          <h2>Resumen del pedido</h2>
+          <p class="lm-kicker">Resumen</p>
+          <div class="lm-checkout-product-preview"><img src="img/pea-protein-final.png" alt="Pea Protein Powder" /><div><strong>Pea Protein Powder</strong><span>Engineered Plant Protein</span></div></div>
           <div id="lm-checkout-items" class="lm-checkout-items"></div>
-          <div class="lm-checkout-total">
-            <span>Total</span>
-            <strong id="lm-checkout-total">0,00 €</strong>
-          </div>
+          <div class="lm-checkout-total"><span>Total</span><strong id="lm-checkout-total">0,00 €</strong></div>
         </aside>
       </div>
     </section>
   </main>
-
   <script src="js/app.js"></script>
 </body>
 </html>
