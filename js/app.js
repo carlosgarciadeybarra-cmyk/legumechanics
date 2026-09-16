@@ -6,7 +6,7 @@ const LM = (() => {
       id: "pea-protein",
       image: "img/pea-protein-final.png",
       name: "Pea Protein Powder",
-      price: 29.99,
+      price: 0.00,
       subtitle: "23 g protein per dose · Leucine optimized"
     }
   };
